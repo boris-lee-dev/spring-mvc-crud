@@ -19,7 +19,7 @@
     </properties>
 
     <dependencies>
-        <!-- Servlet API (необходим для работы Tomcat, scope provided) -->
+        <!-- Servlet API -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -34,7 +34,7 @@
             <version>${spring.version}</version>
         </dependency>
 
-        <!-- Spring ORM (для интеграции с Hibernate и транзакциями) -->
+        <!-- Spring ORM -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
@@ -55,20 +55,45 @@
             <version>${thymeleaf.version}</version>
         </dependency>
 
-        <!-- Пул соединений HikariCP (высокопроизводительный пул для EntityManager) -->
+        <!-- HikariCP -->
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
             <version>5.0.1</version>
         </dependency>
 
-        <!-- Драйвер базы данных (например, MySQL. Если используешь PostgreSQL или H2, замени здесь) -->
+        <!-- DB driver -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
+
+        <!-- Bean Validation (checking @NotBlank, @Size, @Email, etc...) for Java EE / javax.* -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.2.5.Final</version>
+        </dependency>
+
+        <!-- API Expression Language -->
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Expression Language from GlassFish -->
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>3.0.1-b12</version>
+        </dependency>
+
     </dependencies>
+
+
 
     <build>
         <plugins>

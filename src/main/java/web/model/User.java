@@ -1,6 +1,9 @@
 package web.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -10,13 +13,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @NotBlank(message = "Name field is required")
+    @Size(min = 2, max = 50, message = "The name must contain between 2 and 50 characters")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "last_name")
+    @NotBlank(message = "Last name field is required")
+    @Size(min = 2, max = 50, message = "\n" +
+            "The last name must contain between 2 and 50 characters")
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "email")
+    @NotBlank(message = "Email field is required")
+    @Email(message = "Enter a valid email address")
+    @Size(max = 100, message = "The email must not exceed 100 characters")
+    @Column(name = "email", nullable = false)
     private String email;
 
     public User() {}
