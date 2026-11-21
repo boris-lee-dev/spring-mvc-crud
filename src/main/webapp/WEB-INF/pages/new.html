@@ -1,12 +1,12 @@
 <form th:method="POST" th:action="@{/users}" th:object="${user}">
     <div>
-        <label for="name">Имя:</label>
+        <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}"/>
         <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error name</div>
     </div>
 
     <div>
-        <label for="lastName">Фамилия:</label>
+        <label for="lastName">Last name:</label>
         <input type="text" id="lastName" th:field="*{lastName}"/>
         <div style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Error last name</div>
     </div>
@@ -17,5 +17,5 @@
         <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error email</div>
     </div>
 
-    <button type="submit">Создать</button>
+    <button type="submit">Create</button>
 </form>
